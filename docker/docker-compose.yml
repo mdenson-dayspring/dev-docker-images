@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile.web
+    image: '${REPOSITORY_NAME}/${APP_NAME}/web:${IMAGE_TAG}'
+    environment:
+      PORT: 8080
+      NODE_ENV: "dev"
+      PRODUCTION: "false"
+      HEROKU_BASE: "https://api-dev.wematchwell.com"
+      AUTH0_AUDIENCE: "matchwell-symfony"
+      AUTH0_DOMAIN: "matchwell-dev.auth0.com"
+      AUTH0_ADMIN_CLIENTID: "CRV2DVydLYKp4VlF25bPw1AWZTCpT0Rw"
+      AUTH0_CLINICIAN_CLIENTID: "vv11u2jtTrJbdnyr1wiLGc26V7zIWK1D"
+      AUTH0_FACILITY_CLIENTID: "gr4uoWdygGz1yPlmQcRHloB54vv7fR0s"
+    ports:
+      - 8080:8080

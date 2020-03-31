@@ -1,0 +1,13 @@
+FROM node:10-alpine
+
+RUN apk update && apk add --no-cache make git
+WORKDIR /app
+
+COPY web/package.json web/package-lock.json /app/
+RUN cd /app && npm install
+
+COPY dist /app
+
+CMD ["node", "server.js"]
+
+

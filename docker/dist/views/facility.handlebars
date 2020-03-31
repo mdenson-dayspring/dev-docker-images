@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  </head>
+  <body class="matchwell-theme hbr">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{gtm_key}}&gtm_auth={{gtm_auth}}&gtm_preview={{gtm_preview}}&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <facility-root></facility-root>
+
+    <script>
+        window.APP_DATA = {
+            production: {{ production }},
+            auth0_clientID: '{{ auth0_clientID }}',
+            auth0_domain: '{{ auth0_domain }}',
+            auth0_audience: '{{ auth0_audience }}',
+            heroku_base: '{{ heroku_base }}',
+            resumeCredentialTemplateSfid: '{{ resumeCredentialTemplateSfid }}'
+        };
+    </script>
+
+    {{{scriptTag 'runtime'}}}
+    {{{scriptTag 'polyfills'}}}
+    {{{scriptTag 'styles'}}}
+    {{{scriptTag 'vendor'}}}
+    {{{scriptTag 'main'}}}
+  </body>
+</html>

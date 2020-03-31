@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  </head>
+  <body class="matchwell-theme hbr">
+
+    <admin-root></admin-root>
+
+    <script>
+        window.APP_DATA = {
+            production: {{ production }},
+            auth0_clientID: '{{ auth0_clientID }}',
+            auth0_domain: '{{ auth0_domain }}',
+            auth0_audience: '{{ auth0_audience }}',
+            heroku_base: '{{ heroku_base }}'
+        };
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{google_places_api_key}}&libraries=places" async></script>
+    {{{scriptTag 'runtime'}}}
+    {{{scriptTag 'polyfills'}}}
+    {{{scriptTag 'styles'}}}
+    {{{scriptTag 'vendor'}}}
+    {{{scriptTag 'main'}}}
+  </body>
+</html>
